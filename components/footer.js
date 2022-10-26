@@ -2,11 +2,10 @@ import Image from "next/image";
 
 export default function Footer() {
   return (
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
+        <a className="footer"
+          href="https://wms784.wordpress.com/"
           target="_blank"
-          rel="noopener noreferrer"
-        >
+          rel="noopener noreferrer">
           Created by WMs784
         </a>
   );

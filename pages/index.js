@@ -1,5 +1,6 @@
 import Head from 'next/head'
-import Image from 'next/image'
+// import Image from 'next/image'
+// import { Table } from '@chakra-ui/react'
 import styles from '../styles/Home.module.css'
 
 export default function Home({loc_list}) {
@@ -16,13 +17,22 @@ export default function Home({loc_list}) {
           白山祭実行委員会　居場所一覧
         </h1> */}
         <h2>一覧</h2>
-        <table>
+        <table className='table'>
+          <thead>
+          <tr>
+            <th>所属局</th>
+            <th>氏名</th>
+            <th>現在地</th>
+          </tr>
+          </thead>
+          <tbody>
           {loc_list.map((loc) => {
             return <tr key={loc["タイムスタンプ"]}>
-              <td>{`所属局：${loc["所属局"]}`}</td>
-              <td>{`氏名：${loc["氏名"]}`}</td>
-              <td>{`現在地：${loc["教室"]}`}</td></tr>;
+              <td>{`${loc["所属局"]}`}</td>
+              <td>{`${loc["氏名"]}`}</td>
+              <td>{`${loc["教室"]}`}</td></tr>;
           })}
+          </tbody>
         </table>
       </main>
     </div>
