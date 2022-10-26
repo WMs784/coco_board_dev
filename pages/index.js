@@ -39,9 +39,9 @@ export default function Home({loc_list}) {
   )
 }
 export async function getServerSideProps() {
-  const key = process.env.KEY;
-  const lib = process.env.LIB;
-  const res = await fetch(`https://script.googleusercontent.com/macros/echo?user_content_key=${key}&lib=${lib}`);
+  // const key = process.env.KEY;
+  // const lib = process.env.LIB;
+  const res = await fetch(`https://script.googleusercontent.com/macros/echo?user_content_key=ZqjNYMH9142AyV2_gL987RlLNFUIexV1nN-oE1vCYSZwEFLvuGLLT5vNxuwxWQleCVXHFi4Q6rs84mtUtz52B3BiC2PcrrfOm5_BxDlH2jW0nuo2oDemN9CCS2h10ox_1xSncGQajx_ryfhECjZEnKNK-I2lBb-ctL5yfHeH9OSPIxbXM_Wp_79N0pRnStu2_0VELsqxM3F9yCC5jelkVTIK384uT52L1y5mWegSO4PhQ8aGS_S5s9z9Jw9Md8uu&lib=MZ60lBXUZUSjyzLO4JXZdOg3P25e9I3Qg`);
   const loc_list = await res.json();
   console.log(loc_list);
   return { props: { loc_list } };
