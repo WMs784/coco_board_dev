@@ -12,29 +12,19 @@ export default function Home({loc_list}) {
       </Head>
 
       <main className={styles.main}>
-        <h1 className={styles.title}>
+        {/* <h1 className={styles.title}>
           白山祭実行委員会　居場所一覧
-        </h1>
-
-        <ul>
+        </h1> */}
+        <h2>一覧</h2>
+        <table>
           {loc_list.map((loc) => {
-            return <li key={loc.time}>{`氏名：${loc.name}，現在地：${loc.room}`}</li>;
+            return <tr key={loc["タイムスタンプ"]}>
+              <td>{`所属局：${loc["所属局"]}`}</td>
+              <td>{`氏名：${loc["氏名"]}`}</td>
+              <td>{`現在地：${loc["教室"]}`}</td></tr>;
           })}
-        </ul>
+        </table>
       </main>
-
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <span className={styles.logo}>
-            <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-          </span>
-        </a>
-      </footer>
     </div>
   )
 }
